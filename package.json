@@ -1,0 +1,28 @@
+{
+  "name": "FiscalPhilly",
+  "version": "0.0.1",
+  "description": "Twitter bot who regularly tweets commodities contracts from the City of Philadelphia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PunkChameleon/FiscalPhilly.git"
+  },
+  "keywords": [
+    "Fiscal",
+    "Philly",
+    "Twitter"
+  ],
+  "author": "streetlight <nweingartner@gmail.com> (http://github.com/streetlight)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PunkChameleon/FiscalPhilly/issues"
+  },
+  "homepage": "https://github.com/PunkChameleon/FiscalPhilly",
+  "dependencies": {
+    "twode": "0.0.3",
+    "underscore": "^1.8.3"
+  }
+}
