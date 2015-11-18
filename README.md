@@ -1,6 +1,6 @@
 # FiscalPhilly
 
-A simple node-based twitterbot that regularly tweets out the commodities contract information [from the City of Philadelphia](https://www.opendataphilly.org/dataset/commodity-contract-data).
+A simple node-based twitterbot that regularly tweets out the commodities contract information from the City of Philadelphia.
 
 You can find it live [@FiscalPhilly](http://www.twitter.com/FiscalPhilly).
 
@@ -12,7 +12,7 @@ Any and all contributions are welcome. Just fork and PR any fixes and improvemen
 
 ## License
 
-Copyright (c) 2015 Nick Weingartner [@PunkChameleon](https://twitter.com/PunkChameleon).
+Copyright (c) 2015 [Nick Weingartner](https://twitter.com/PunkChameleon).
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
