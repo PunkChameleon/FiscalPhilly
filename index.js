@@ -13,15 +13,15 @@ var Twitter = require('twode'),
         access_token_secret: config.TWITTER_ACCESS_TOKEN_SECRET
     });
 
-// Cron Job
-// 30      6,15     *       *       *
-
+// Define Function to Tweet
 function tweetAboutContract (contract) {
     if (contract.Total_Transactions && contract.Contract_Description) {
         console.log('This quarter, the City spent ' + contract.Total_Transactions + " on " +  contract.Contract_Description + "."); 
     }
 }
 
-new CronJob('30      11,17     *       *       *', function() {
+// Set up Cron Job. Runs at 11:30 and 6:30 PM daily
+new CronJob('30 11,17 * * *', function() {
   tweetAboutContract(q1[counter]);
-}, null, true, 'America/Philadelphia');
+  counter ++;
+}, null, true, 'America/New_York');
