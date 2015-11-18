@@ -16,7 +16,13 @@ var Twitter = require('twode'),
 // Define Function to Tweet
 function tweetAboutContract (contract) {
     if (contract.Total_Transactions && contract.Contract_Description) {
-        console.log('This quarter, the City spent ' + contract.Total_Transactions + " on " +  contract.Contract_Description + "."); 
+        twit.updateStatus('The City spent ' + contract.Total_Transactions + " on " +  contract.Contract_Description + ".",
+          function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+          }
+        );
     }
 }
 
