@@ -16,7 +16,7 @@ var Twitter = require('twode'),
 // Define Function to Tweet
 function tweetAboutContract (contract) {
     if (contract.Total_Transactions && contract.Contract_Description) {
-        twit.updateStatus('The City spent ' + contract.Total_Transactions + " on " +  contract.Contract_Description + ".",
+        twit.updateStatus('The City spent $' + contract.Total_Transactions.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' on ' +  contract.Contract_Description,
           function (err, data) {
             if (err) {
               console.log(err);
@@ -29,5 +29,5 @@ function tweetAboutContract (contract) {
 // Set up Cron Job. Runs at 11:30 and 6:30 PM daily
 new CronJob('30 11,17 * * *', function() {
   tweetAboutContract(q1[counter]);
-  counter ++;
+  counter++;
 }, null, true, 'America/New_York');
