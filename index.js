@@ -27,7 +27,7 @@ function tweetAboutContract (contract) {
 }
 
 // Set up Cron Job. Runs at 11:30 and 6:30 PM daily
-new CronJob('30 11,17 * * *', function() {
+new CronJob('00 11,18 * * *', function() {
   tweetAboutContract(q1[counter]);
   counter++;
 }, null, true, 'America/New_York');
