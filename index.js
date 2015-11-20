@@ -31,3 +31,6 @@ new CronJob('00 11,18 * * *', function() {
   tweetAboutContract(q1[counter]);
   counter++;
 }, null, true, 'America/New_York');
+
+// Hack to get it to run on Heroku
+require('net').createServer().listen();
