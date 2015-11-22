@@ -16,7 +16,14 @@ var Twitter = require('twode'),
 // Define Function to Tweet
 function tweetAboutContract (contract) {
     if (contract.Total_Transactions && contract.Contract_Description) {
-        twit.updateStatus('The City spent $' + contract.Total_Transactions.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' on ' +  contract.Contract_Description,
+
+        var tweet = 'We spent $' + contract.Total_Transactions.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' on ' +  contract.Contract_Description;
+
+        if (tweet.length > 140) {
+          tweet = tweet.substring(0, 137) + '...';
+        }
+
+        twit.updateStatus(tweet,
           function (err, data) {
             if (err) {
               console.log(err);
@@ -31,6 +38,3 @@ new CronJob('00 11,18 * * *', function() {
   tweetAboutContract(q1[counter]);
   counter++;
 }, null, true, 'America/New_York');
-
-// Hack to get it to run on Heroku
-require('net').createServer().listen();
